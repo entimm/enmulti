@@ -1,0 +1,24 @@
+[
+  {
+    "id": "tools",
+    "children": [
+      {
+        "caption": "-"
+      },
+      {
+        "caption": "enmulti - open me",
+        "command": "enmulti_subl",
+        "args": {
+          "target": "~/Library/Application Support/Sublime Text 3/Packages/enmulti"
+        }
+      },
+      {
+        "caption": "enmulti - open user package",
+        "command": "enmulti_subl",
+        "args": {
+          "target": "~/Library/Application Support/Sublime Text 3/Packages/User/"
+        }
+      }
+    ]
+  }
+]

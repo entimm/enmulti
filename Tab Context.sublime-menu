@@ -1,0 +1,11 @@
+[
+  { "caption": "-" },
+  {
+    "caption": "enmulti - delete",
+    "command": "side_bar_delete"
+  },
+  {
+    "caption": "enmulti - rename",
+    "command": "side_bar_rename"
+  }
+]

@@ -1,24 +1,31 @@
 [
   {
-    "id": "tools",
     "children": [
       {
         "caption": "-"
       },
       {
-        "caption": "enmulti - open me",
-        "command": "enmulti_subl",
         "args": {
-          "target": "~/Library/Application Support/Sublime Text 3/Packages/enmulti"
-        }
+          "target": "~/Library/Application Support/Sublime Text/Packages/enmulti"
+        },
+        "caption": "enmulti - open me",
+        "command": "enmulti_subl"
       },
       {
-        "caption": "enmulti - open user package",
-        "command": "enmulti_subl",
         "args": {
-          "target": "~/Library/Application Support/Sublime Text 3/Packages/User/"
-        }
+          "target": "~/Library/Application Support/Sublime Text/Packages/User/"
+        },
+        "caption": "enmulti - open user package",
+        "command": "enmulti_subl"
+      },
+      {
+        "args": {
+          "target": "~/OneDrive/Dev/SublimeText/"
+        },
+        "caption": "enmulti - open assist",
+        "command": "enmulti_subl"
       }
-    ]
+    ],
+    "id": "tools"
   }
 ]

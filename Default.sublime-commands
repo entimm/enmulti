@@ -3,137 +3,193 @@
     "caption": "enmulti - md5",
     "command": "enmulti",
     "args": {
-        "method": "md5"
+      "method": "md5"
+    }
+  },
+  {
+    "caption": "enmulti - crc32",
+    "command": "enmulti",
+    "args": {
+      "method": "crc32"
     }
   },
   {
     "caption": "enmulti - ip2long",
     "command": "enmulti",
     "args": {
-        "method": "ip2long"
+      "method": "ip2long"
     }
   },
   {
     "caption": "enmulti - long2ip",
     "command": "enmulti",
     "args": {
-        "method": "long2ip"
+      "method": "long2ip"
     }
   },
   {
     "caption": "enmulti - strtotime",
     "command": "enmulti",
     "args": {
-        "method": "strtotime"
+      "method": "strtotime"
     }
   },
   {
     "caption": "enmulti - date",
     "command": "enmulti",
     "args": {
-        "method": "date"
+      "method": "date"
     }
   },
   {
     "caption": "enmulti - datetime",
     "command": "enmulti",
     "args": {
-        "method": "datetime"
+      "method": "datetime"
     }
   },
   {
     "caption": "enmulti - toggle_time",
     "command": "enmulti",
     "args": {
-        "method": "toggle_time"
+      "method": "toggle_time"
     }
   },
   {
     "caption": "enmulti - utf8_to_unicode",
     "command": "enmulti",
     "args": {
-        "method": "utf8_to_unicode"
+      "method": "utf8_to_unicode"
     }
   },
   {
     "caption": "enmulti - unicode_to_utf8",
     "command": "enmulti",
     "args": {
-        "method": "unicode_to_utf8"
+      "method": "unicode_to_utf8"
     }
   },
   {
     "caption": "enmulti - json_to_table",
     "command": "enmulti",
     "args": {
-        "method": "json_to_table"
+      "method": "json_to_table"
     }
   },
   {
     "caption": "enmulti - json_to_kv",
     "command": "enmulti",
     "args": {
-        "method": "json_to_kv"
+      "method": "json_to_kv"
     }
   },
   {
     "caption": "enmulti - sum",
     "command": "enmulti",
     "args": {
-        "method": "sum"
+      "method": "sum"
     }
   },
   {
     "caption": "enmulti - insertsql_to_json",
     "command": "enmulti",
     "args": {
-        "method": "insertsql_to_json"
+      "method": "insertsql_to_json"
     }
   },
   {
     "caption": "enmulti - strrev",
     "command": "enmulti",
     "args": {
-        "method": "strrev"
+      "method": "strrev"
     }
   },
   {
     "caption": "enmulti - sections_rev",
     "command": "enmulti",
     "args": {
-        "method": "sections_rev"
+      "method": "sections_rev"
     }
   },
   {
     "caption": "enmulti - sections_shuffle",
     "command": "enmulti",
     "args": {
-        "method": "sections_shuffle"
+      "method": "sections_shuffle"
+    }
+  },
+  {
+    "caption": "enmulti - sections_position",
+    "command": "enmulti",
+    "args": {
+      "method": "sections_position"
     }
   },
   {
     "caption": "enmulti - count",
     "command": "enmulti",
     "args": {
-        "method": "count"
+      "method": "count"
     }
   },
   {
     "caption": "enmulti - range",
     "command": "enmulti",
     "args": {
-        "method": "range"
+      "method": "range"
     }
   },
   {
     "caption": "enmulti - eval",
     "command": "enmulti",
     "args": {
-        "method": "eval"
+      "method": "eval"
+    }
+  },
+  {
+    "caption": "enmulti - map",
+    "command": "enmulti",
+    "args": {
+      "method": "map"
     }
   },
   {
     "caption": "enmulti - callback",
-    "command": "enmulti_prompt",
+    "command": "enmulti_prompt"
+  },
+  {
+    "caption": "enmulti - split",
+    "command": "enmulti",
+    "args": {
+      "method": "split"
+    }
+  },
+  {
+    "caption": "enmulti - incr_interval",
+    "command": "enmulti",
+    "args": {
+      "method": "incr_interval"
+    }
+  },
+  {
+    "caption": "enmulti - fixed_interval",
+    "command": "enmulti",
+    "args": {
+      "method": "fixed_interval"
+    }
+  },
+  {
+    "caption": "enmulti - implode",
+    "command": "enmulti",
+    "args": {
+      "method": "implode"
+    }
+  },
+  {
+    "caption": "enmulti - deduct",
+    "command": "enmulti",
+    "args": {
+      "method": "deduct"
+    }
   }
 ]

@@ -1,0 +1,2 @@
+addslashes:使用反斜线引用字符串
+stripslashes:反引用一个引用字符串

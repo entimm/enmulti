@@ -43,7 +43,7 @@ def run_php(view: sublime.View, method='callback', callback=''):
     data = json.dumps({'selections': selections, 'callback': callback})
     args = [
         'php',
-        os.path.join(sublime.packages_path(), PACKAGE_DIRECTORY, 'run.php'),
+        os.path.join(sublime.packages_path(), PACKAGE_DIRECTORY, 'php/run.php'),
         method,
         data
     ]

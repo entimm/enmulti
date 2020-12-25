@@ -26,7 +26,7 @@ class ReplaceTexts(sublime_plugin.TextCommand):
 
 class EnmultiSubl(sublime_plugin.TextCommand):
     def run(self, edit, target=None):
-        args = ['subl', target]
+        args = ['subl', '-a', target]
         try:
             subprocess.Popen(args, stdout=subprocess.PIPE)
         except OSError:

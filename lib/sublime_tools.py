@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+from typing import List
 
 import sublime
 
@@ -10,8 +11,21 @@ if ST3:
 else:
     PACKAGE_DIRECTORY = os.path.basename(os.getcwd())
 
+SETTINGS_FILE = 'Preferences.sublime-settings'
+PHP_COMMAND = 'php'
+RUN_PHP_SCRIPT = os.path.join(sublime.packages_path(), PACKAGE_DIRECTORY, 'php/run.php')
 
-def selected_regions(view):
+
+SETTINGS_FILE = "enmulti.sublime-settings"
+
+
+def settings() -> sublime.Settings:
+    """获取Sublime Text的首选项设置"""
+    return sublime.load_settings(SETTINGS_FILE)
+
+
+def selected_regions(view: sublime.View) -> List[sublime.Region]:
+    """获取当前文本视图的选定区域"""
     sels = [sel for sel in view.sel() if not sel.empty()]
 
     if not sels:
@@ -22,28 +36,29 @@ def selected_regions(view):
     return sels
 
 
-def get_settings(key, default=None):
-    return settings().get(key, default)
+def get_settings(key: str, default=None):
+    """获取Sublime Text的首选项设置"""
+    return sublime.load_settings(SETTINGS_FILE).get(key, default)
 
 
 def status_message(msg: str):
+    """在状态栏显示一条消息"""
     print("%s" % (msg))
     sublime.status_message(msg)
 
 
 def alert(message: str):
+    """弹出警告对话框"""
     sublime.message_dialog(message)
 
 
-def run_php(view: sublime.View, method='callback', callback=''):
-    selections = []
-    for region in view.sel():
-        selections.append(view.substr(region))
-
+def run_php(view: sublime.View, method: str='callback', callback: str='') -> None:
+    """在PHP环境中运行指定的方法"""
+    selections = [view.substr(region) for region in selected_regions(view)]
     data = json.dumps({'selections': selections, 'callback': callback})
     args = [
-        'php',
-        os.path.join(sublime.packages_path(), PACKAGE_DIRECTORY, 'php/run.php'),
+        PHP_COMMAND,
+        RUN_PHP_SCRIPT,
         method,
         data
     ]
@@ -51,11 +66,8 @@ def run_php(view: sublime.View, method='callback', callback=''):
     print(args)
     try:
         proc = subprocess.Popen(args, stdout=subprocess.PIPE)
-    except OSError:
-        sublime.error_message('error occor!!!')
-        return
-    output = proc.communicate()[0]
-    print('output:'+output.decode('utf8'))
-
-    texts = output.decode('utf8').split('↩')
-    view.run_command("replace_texts", {"texts": texts})
+        output = proc.communicate()[0].decode('utf-8')
+        texts = output.split('↩')
+        view.run_command("replace_texts", {"texts": texts})
+    except OSError as e:
+        sublime.error_message('Error running PHP command - {e}')

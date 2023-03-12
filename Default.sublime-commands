@@ -1,5 +1,9 @@
 [
   {
+    "caption": "kkk",
+    "command": "transform_text_start"
+  },
+  {
     "caption": "enmulti - md5",
     "command": "enmulti",
     "args": {

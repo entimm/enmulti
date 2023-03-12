@@ -21,13 +21,14 @@ class TransformTextStartCommand(sublime_plugin.ApplicationCommand):
 
 class TransformTextCommand(sublime_plugin.TextCommand):
     def run(self, edit, transform_type=""):
-        for region in self.view.sel():
+        selected_texts = [self.view.substr(region) for region in self.view.sel() if not region.empty()]
+        for i, region in enumerate(self.view.sel()):
             if not region.empty():
                 text = self.view.substr(region)
                 try:
                     # 查找对应的转换函数并执行
                     transformed_text = next(
-                        func(text) for _, t, func in TRANSFORMATIONS if t == transform_type
+                        func(text, i, selected_texts) for _, t, func in TRANSFORMATIONS if t == transform_type
                     )
                     # 替换选中文本
                     self.view.replace(edit, region, transformed_text)

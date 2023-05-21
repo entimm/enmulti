@@ -3,6 +3,8 @@ import codecs
 import hashlib
 import json
 import time
+import random
+import string
 from datetime import datetime, date
 
 
@@ -99,3 +101,20 @@ def utf8_to_unicode_transform(v, i, secs):
         return v.encode('unicode_escape').decode('utf-8')
     except Exception as e:
         return "Error occurred: {str(e)}"
+
+@transformation("ReplaceChars", "replace_chars")
+def replace_chars(v, i, secs):
+    # 获取所有大小写字母和数字的字符串
+    chars = string.ascii_lowercase + string.ascii_uppercase
+    # 生成替换规则，用字典来存储
+    replace_dict = {}
+    for char in chars:
+        if char.islower():
+            replace_char = random.choice(string.ascii_lowercase.replace(char, ''))
+        else:
+            replace_char = random.choice(string.ascii_uppercase.replace(char, ''))
+        replace_dict[char] = replace_char
+    # 生成数字替换规则，加入到替换规则字典中
+    replace_dict.update({str(i): str(random.randint(1, 9)) for i in range(10)})
+    # 调用translate()方法替换字符串中的字符
+    return v.translate(str.maketrans(replace_dict))
